@@ -31,3 +31,6 @@ class Solution {
     }
 }
 
+//다음 아이디어 
+//hasPrefix, popLast 를 사용해서 처리해보면 훨씬 간단할것으로 보인다.
+
