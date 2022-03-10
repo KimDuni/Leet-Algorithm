@@ -1,0 +1,29 @@
+import Foundation
+
+extension Int {
+    func toBinary() -> [Int] {
+        var src: [Int] = []
+        var tmpN = self
+        while tmpN >= 2 {
+            src.append(Int(tmpN % 2))
+            tmpN = Int(tmpN / 2)
+        }
+        src.append(tmpN)
+        return src
+    }
+}
+
+func solution(_ n:Int) -> Int
+{
+    let oneCnt = n.toBinary().filter({$0 == 1})
+    var next = n + 1
+    
+    while true {
+        if next.toBinary().filter({$0 == 1}) == oneCnt {
+            break
+        }
+        next += 1
+    }
+    
+    return next
+}
